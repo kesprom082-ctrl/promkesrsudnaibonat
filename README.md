@@ -7,52 +7,122 @@
 
 <style>
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  padding: 10px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #eaf1f8, #f6f9fc);
+  padding: 15px;
 }
+
+/* Card utama */
 .container {
   max-width: 480px;
   margin: auto;
   background: white;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
-h2 {
+
+/* Header + logo */
+.header {
   text-align: center;
+  margin-bottom: 20px;
 }
+
+.header img {
+  width: 120px;
+  margin-bottom: 8px;
+}
+
+.header h2 {
+  margin: 5px 0;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* Form */
 label {
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: 600;
+  margin-top: 14px;
   display: block;
+  color: #34495e;
 }
-input, textarea, select, button {
+
+input, textarea, select {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #dfe6e9;
+  font-size: 14px;
+  background: #fafbfc;
 }
+
+textarea {
+  resize: vertical;
+}
+
+/* Tombol */
 button {
-  background: #27ae60;
-  color: white;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  margin-top: 10px;
   font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
 }
+
+/* Warna tombol */
+button:not(.secondary):not(.print) {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
 button.secondary {
-  background: #2980b9;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
 }
+
 button.print {
-  background: #8e44ad;
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  color: white;
 }
+
+/* Rekap button */
+.rekap {
+  display: flex;
+  gap: 10px;
+}
+
+.rekap button {
+  flex: 1;
+}
+
+/* Divider */
 hr {
-  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ecf0f1;
+  margin: 20px 0;
 }
+</style>
 </style>
 </head>
 
 <body>
+<main>
 <div class="container">
-<h2>Laporan Kerja IT SIMRS</h2>
+
+    <div class="header">
+        <img src="https://i.ibb.co.com/9kXbzMyb/Chat-GPT-Image-Jun-29-2026-02-37-41-PM.png" alt="Logo SIMRS">
+        <h2>Laporan Kerja IT SIMRS</h2>
+    </div>
 
 <label>Lokasi / Ruangan</label>
 <input type="text" id="lokasi" required>
@@ -159,7 +229,7 @@ function printPDF() {
 }
 
 function openRekapHarian() {
-  window.open(SCRIPT_URL + "?rekap=harian", "_blank");
+  window.open(SCRIPT_URL + "https://docs.google.com/spreadsheets/d/1R3o6cmbhg0iYAvP9a5UokS_QaOFhIXRoPuRTniF1xNU/edit?gid=0#gid=0", "_blank");
 }
 
 function openRekapBulanan() {
@@ -176,4 +246,4 @@ function resetForm() {
 }
 </script>
 </body>
-</html>s
+</html>
